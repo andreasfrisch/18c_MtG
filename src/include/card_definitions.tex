@@ -1,0 +1,66 @@
+% Sizes
+\pgfmathsetmacro{\cardWidth}{6.3}
+\pgfmathsetmacro{\cardHeight}{8.8}
+\pgfmathsetmacro{\cardMargin}{0.25}
+
+\pgfmathsetmacro{\abilityBoxHeight}{2}
+\pgfmathsetmacro{\affinityCircleDiameter}{0.75}
+\pgfmathsetmacro{\costCircleDiameter}{0.5}
+
+\pgfmathsetmacro{\opacity}{0.4}
+
+
+% Shapes
+\def\shapeCard{(0,0) rectangle (\cardWidth,\cardHeight)}
+\def\shapeCardInternal{(\cardMargin,\cardMargin) rectangle (\cardWidth-\cardMargin,\cardHeight-\cardMargin)}
+
+\tikzset{
+	cardcorners/.style={
+		rounded corners=0.2cm
+	}
+}
+
+% Commands
+\newcommand{\cardBorder}{
+	\draw[black,cardcorners] \shapeCard;
+	\draw[lightgray,cardcorners] \shapeCardInternal;
+}
+
+\newcommand{\cardName}[2]{
+	\draw[black,cardcorners, fill=#2!30] (\cardMargin,\cardHeight-\cardMargin) rectangle (\cardWidth-\cardMargin,\cardHeight-\cardMargin-0.75);
+	\node [text width=5.7cm] at (\cardWidth*0.5, \cardHeight-\cardMargin-0.25) {
+		\begin{center}
+			\large{\bf #1}
+		\end{center}
+	};
+}
+
+\newcommand{\affinity}[1]{
+	\draw [draw, black, fill=#1!30] (\cardWidth*0.5, \cardMargin*4+\abilityBoxHeight*2+\affinityCircleDiameter*0.5) circle (\affinityCircleDiameter*0.5);
+}
+\newcommand{\affinityAll}{
+	\draw [draw, black, fill=purple!30] (\cardWidth*0.5-\affinityCircleDiameter-0.2, \cardMargin*4+\abilityBoxHeight*2+\affinityCircleDiameter*0.5) circle (\affinityCircleDiameter*0.5);
+	\draw [draw, black, fill=green!30] (\cardWidth*0.5, \cardMargin*4+\abilityBoxHeight*2+\affinityCircleDiameter*0.5) circle (\affinityCircleDiameter*0.5);
+	\draw [draw, black, fill=tan!30] (\cardWidth*0.5+\affinityCircleDiameter+0.2, \cardMargin*4+\abilityBoxHeight*2+\affinityCircleDiameter*0.5) circle (\affinityCircleDiameter*0.5);
+}
+
+\newcommand{\immediateEffect}[4]{
+	\draw[black,cardcorners] (\cardMargin, \cardMargin*3+\abilityBoxHeight) rectangle (\cardWidth-\cardMargin,\cardMargin*3+\abilityBoxHeight*2);
+	\node[circle, draw, fill=#4!30] (\costCircleDiameter) at (\cardWidth-0.5*\cardMargin-0.5*\costCircleDiameter, \cardMargin*2.5+\abilityBoxHeight*2){\small{#2}};
+	\node[text width=2cm] at (\cardMargin+0.5*\cardMargin+1.25,\cardMargin*2+\abilityBoxHeight*2+0.25){\colorbox{white}{\small{\sc#1}}};
+	\node[text width=5cm] at (\cardWidth*0.5,\cardMargin*3+\abilityBoxHeight*1.5){#3};
+}
+\newcommand{\permanentEffect}[4]{
+	\draw[black,cardcorners] (\cardMargin, \cardMargin*2) rectangle (\cardWidth-\cardMargin,\cardMargin*2+\abilityBoxHeight);
+	\node[circle, draw, fill=#4!30] (\costCircleDiameter) at (\cardWidth-0.5*\cardMargin-0.5*\costCircleDiameter, 1.5*\cardMargin+\abilityBoxHeight){\small{#2}};
+	\node[text width=2cm] at (\cardMargin+0.5*\cardMargin+1.25,\cardMargin+\abilityBoxHeight+0.25){\colorbox{white}{\small{\sc#1}}};
+	\node[text width=5cm] at (\cardWidth*0.5,\cardMargin*2+\abilityBoxHeight*0.5){#3};
+}
+\newcommand{\creatureStatistics}[2]{
+	\node [text width=1cm] at (\cardWidth-\cardMargin-0.75, \cardMargin*2.5) {
+		\begin{center}
+			\colorbox{white}{#1 / #2}
+		\end{center}
+	};
+}
+

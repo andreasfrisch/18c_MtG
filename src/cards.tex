@@ -1,0 +1,168 @@
+\documentclass[a4paper]{article}
+\input{include/libs.tex}
+\input{include/colors.tex}
+\input{include/card_definitions.tex}
+
+\begin{document}
+\begin{center}
+\pagestyle{empty}
+\hyphenpenalty=10000
+
+\begin{tikzpicture}
+	\cardBorder
+	\cardName{Insect Swarm}{green}
+	\affinity{green}
+	\immediateEffect{Enchantment -- Aura}{2}{Enchanted \textsc{Creature} has \\-1/-1.}{green}
+	\permanentEffect{Creature}{0}{\textsc{Haste}. \textsc{Stubborn}.}{green}
+	\creatureStatistics{1}{0}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\cardName{Druid of the Claw}{green}
+	\affinity{green}
+	\immediateEffect{Enchantment -- Aura}{3}{Enchanted \textsc{Creature} has +1/+1.}{green}
+	\permanentEffect{Creature}{2}{}{green}
+	\creatureStatistics{3}{2}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\cardName{Druid of the Glade}{green}
+	\affinity{green}
+	\immediateEffect{Spell -- Instant}{0}{You \textsc{recover} 2 life.}{green}
+	\permanentEffect{Creature}{2}{}{green}
+	\creatureStatistics{2}{3}
+\end{tikzpicture}%
+
+
+\begin{tikzpicture}
+	\cardBorder
+	\cardName{Murder of Crows}{green}
+	\affinity{green}
+	\immediateEffect{Instant}{4}{Destroy target \textsc{Creature}.}{green}
+	\permanentEffect{Creature}{2}{Flying.}{green}
+	\creatureStatistics{2}{1}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\cardName{Tranquility}{green}
+	%\affinity{green}
+	\affinityAll
+	\immediateEffect{Spell -- Sorcery}{0}{\textsc{Exhaust} all mana crystals. Place this card as an \textsc{exhausted} mana crystal.}{green}
+	\permanentEffect{Enchantment}{3}{}{green}
+	%\creatureStatistics{2}{1}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\cardName{Grizzled Oak}{green}
+	\affinity{green}
+	\immediateEffect{Spell -- Instant}{2}{Target \textsc{Creature} has +3/+2 until end of turn.}{green}
+	\permanentEffect{Creature -- Treefolk Bear}{5}{\textsc{Trample}. When Grizzled Oak deals combat damage to a player, draw a card}{green}
+	\creatureStatistics{5}{4}
+\end{tikzpicture}%
+
+\newpage
+\begin{tikzpicture}
+	\cardBorder
+	\cardName{Blood Neophyte}{purple}
+	\affinity{purple}
+	\immediateEffect{Spell -- Instant}{0}{Lose 2 life, then draw 2 cards.}{purple}
+	\permanentEffect{Creature -- Vampire}{2}{Lifelink}{purple}
+	\creatureStatistics{1}{3}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\cardName{Crystal Cultist}{purple}
+	\affinity{purple}
+	\immediateEffect{Spell -- Instant}{1}{Lose 1 life, then gain 2 mana.}{purple}
+	\permanentEffect{Creature}{2}{When Crystal Cultist would be put into the graveyard, flip it into an \textsc{exhausted} mana crystal instead.}{purple}
+	\creatureStatistics{0}{2}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\cardName{Night Horror}{purple}
+	\affinity{purple}
+	\immediateEffect{Instant -- Spell}{3}{Target \textsc{creature} has \textsc{flying} until end of turn.}{purple}
+	\permanentEffect{Creature}{3}{\textsc{Flying}.}{purple}
+	\creatureStatistics{3}{2}
+\end{tikzpicture}%
+
+
+\begin{tikzpicture}
+	\cardBorder
+	\cardName{Mind Worm}{purple}
+	\affinity{purple}
+	\immediateEffect{Spell -- Sorcery}{3}{Target player discards a card from their hand.}{purple}
+	\permanentEffect{Creature}{2}{When Mind Worm deals damage to a player, that player must discard a card.}{purple}
+	\creatureStatistics{1}{1}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\cardName{Sacrificial Altar}{purple}
+	\affinity{purple}
+	\immediateEffect{Spell -- Sorcery}{2}{Both players sacrifice a creature if able.}{purple}
+	\permanentEffect{Enchantment}{3}{\textsc{Exhaust}: Destroy one mana crystal you control, then return target card from the graveyard to your hand.}{purple}
+	%\creatureStatistics{a}{t}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\cardName{Tarxalan}{purple}
+	\affinity{purple}
+	\immediateEffect{Spell -- Sorcery}{3}{\footnotesize{Target player loses 2 life. If an opponent lost life this way, you gain 2 life, otherwise destroy target creature with power 2 or less.}}{purple}
+	\permanentEffect{Creature -- Lich}{5}{\footnotesize{\textsc{Flying}. When Tarxalan enters the battlefield you may pay 2 life, then return target card from the graveyard to your hand.}}{purple}
+	\creatureStatistics{3}{3}
+\end{tikzpicture}%
+
+\newpage
+\begin{tikzpicture}
+	\cardBorder
+	\cardName{Offensive Automaton}{tan}
+	%\affinity{tan}
+	\immediateEffect{Enchantment -- Equipment}{3}{Equipped \textsc{creature} has +2/+0}{tan}
+	\permanentEffect{Creature -- Automata}{1}{\textsc{Haste}. \textsc{Stubborn}.}{white}
+	\creatureStatistics{2}{0}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\cardName{Defensive Automaton}{tan}
+	%\affinity{tan}
+	\immediateEffect{Enchantment -- Equipment}{3}{Equipped \textsc{creature} has +0/+1 and \textsc{vigilance}.}{tan}
+	\permanentEffect{Creature -- Automata}{2}{\textsc{Vigilance}.}{white}
+	\creatureStatistics{0}{2}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\cardName{Apprentice Gearsmith}{tan}
+	\affinity{tan}
+	\immediateEffect{Spell -- Sorcery}{2}{Look at the top 3 cards of the library, then put one into your hand, one into the graveyard, and one on top of the library.}{tan}
+	\permanentEffect{Creature -- Gearsmith}{0}{Return target \textsc{Automata} from the graveyard to your hand.}{tan}
+	\creatureStatistics{1}{1}
+\end{tikzpicture}%
+
+
+\begin{tikzpicture}
+	\cardBorder
+	\cardName{Witch Hunter}{tan}
+	\affinity{tan}
+	\immediateEffect{Spell -- Instant}{2}{\textsc{Counter} target \textsc{spell}}{tan}
+	\permanentEffect{Creature -- Gearsmith}{2}{\textsc{Vigilance}.}{tan}
+	\creatureStatistics{2}{2}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\cardName{Warden of the Faith}{tan}
+	\affinity{tan}
+	\immediateEffect{Spell -- Instant}{2}{Target \textsc{creature} suffers 2 damage.}{tan}
+	\permanentEffect{Creature -- Gearsmith}{3}{Return target \textsc{Gearsmith} card from the graveyard to your hand}{tan}
+	\creatureStatistics{1}{2}
+\end{tikzpicture}%
+\begin{tikzpicture}
+	\cardBorder
+	\cardName{\small{High Priest of the Free Towns}}{tan}
+	\affinity{tan}
+	\immediateEffect{Spell -- Sorcery}{0}{\footnotesize{All players draw cards until they have 3 cards in hand. All players discard cards until they have 3 cards in hand.}}{tan}
+	\permanentEffect{Creature -- Gearsmith}{4}{Other \textsc{Gearsmiths} have +1/+1 for each \textsc{automata} in play.}{tan}
+	\creatureStatistics{1}{3}
+\end{tikzpicture}%
+
+\end{center}
+\end{document}
